@@ -2,17 +2,162 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Destination Discovery App Link</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Discovery App - Capstone Android App (Debug APK)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
-    <h1>Welcome to the Destination Discovery App Hosting Page</h1>
-    <h2>This is a simple page to download the APK to my Destination Discovery App</h2>
-    <p>The Destination Discovery App is an mobile app for Android. It is a simple vacation planning app that allows you to put in the details of 
-      each vacation you would like to plan. You can enter the dates of your vacation, as well as the vacation destination and stay spot (i.e. hotel).</p>
-    <p>Additionally, you can plan excursions that occur within the timeframe of whichever vacation you are planning. This app is for any Android device running
-    the Android API 26+. The link for the downloadable APK is below.</p>
-    <a href="https://github.com/GitHubster808/Destination-Discovery-github-page/blob/main/app-debug.apk">APK for the Destination Discovery Mobile App for Android</a>
-    <h2>Enoy the Destination Discovery App!</h2>
-    
+
+    <header class="ticket-header">
+      
+      <p class="eyebrow">Android · Debug Build · Capstone Project</p>
+      <h1 class="wordmark">Destination Discovery</h1>
+      <p class="tagline">Go ahead. Turn on the fun!</p>
+      <p class="lede">
+        A vacation-planning app for Android. Name a trip, set the hotel and dates,
+        slot in excursions, and text the itinerary to whoever's coming along.
+      </p>
+    </header>
+
+    <main>
+
+      <section class="itinerary" aria-labelledby="itinerary-heading">
+        <h2 id="itinerary-heading" class="section-heading">What it does</h2>
+        <ol class="itinerary-list">
+          <li class="itinerary-row">
+            <span class="itinerary-glyph" aria-hidden="true">01</span>
+            <div class="itinerary-copy">
+              <h3>Plan the trip</h3>
+              <p>Name the vacation, log the hotel stay, and pick a start and end date.</p>
+            </div>
+            <span class="itinerary-time">START → END</span>
+          </li>
+          <li class="itinerary-row">
+            <span class="itinerary-glyph" aria-hidden="true">02</span>
+            <div class="itinerary-copy">
+              <h3>Add excursions</h3>
+              <p>Slot activities into the trip window, each with its own date.</p>
+            </div>
+            <span class="itinerary-time">IN-TRIP</span>
+          </li>
+          <li class="itinerary-row">
+            <span class="itinerary-glyph" aria-hidden="true">03</span>
+            <div class="itinerary-copy">
+              <h3>Get notified</h3>
+              <p>Turn on a reminder for a whole vacation or a single excursion.</p>
+            </div>
+            <span class="itinerary-time">ON DEMAND</span>
+          </li>
+          <li class="itinerary-row">
+            <span class="itinerary-glyph" aria-hidden="true">04</span>
+            <div class="itinerary-copy">
+              <h3>Share the itinerary</h3>
+              <p>Send the hotel and dates straight to a contact by text.</p>
+            </div>
+            <span class="itinerary-time">SMS</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="gallery" aria-labelledby="gallery-heading">
+        <h2 id="gallery-heading" class="section-heading">A look at the app</h2>
+        <p class="section-sub">Pulled from the app's own screens.</p>
+
+        <div class="phone-strip">
+
+          <figure class="phone">
+            <div class="phone-frame">
+              <div class="phone-screen screen-welcome">
+                <img src="images/Destination Discovery Main Activity.png" alt="Screenshot of the Destination Discovery app's main activity screen. Tap Here button is visible.">
+              </div>
+            </div>
+            <figcaption>Welcome</figcaption>
+          </figure>
+
+          <figure class="phone">
+            <div class="phone-frame">
+              <div class="phone-screen screen-welcome">
+              <img src="images/Vacation Offerings Activity.png" alt="Screenshot of the Destination Discovery app's vacation offerings activity screen. A list of vacations is visible.">
+            </div>
+          </div>
+            <figcaption>Vacation Offerings</figcaption>
+          </figure>
+
+          <figure class="phone">
+            <div class="phone-frame">
+              <div class="phone-screen screen-welcome">
+              <img src="images/Vacation Details Saved Excursion Data.png" alt="Screenshot of the Destination Discovery app's vacation details activity screen. Detailed vacation information is visible.">
+            </div>
+          </div>
+            <figcaption>Vacation Details</figcaption>
+          </figure>
+
+          <figure class="phone">
+            <div class="phone-frame">
+              <div class="phone-screen screen-welcome">
+              <img src="images/Vacation Details Menu Items.png" alt="Screenshot of the Destination Discovery app's vacation menu items screen. Detailed menu information is visible.">
+            </div>
+          </div>
+            <figcaption>Vacation Details Menu</figcaption>
+          </figure>
+          
+          <figure class="phone">
+            <div class="phone-frame">
+              <div class="phone-screen screen-welcome">
+              <img src="images/Excursion Details Activity.png" alt="Screenshot of the Destination Discovery app's excursion details activity screen. Excursion information is visible.">
+            </div>
+          </div>
+            <figcaption>Excursion Details</figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+      <section class="download" aria-labelledby="download-heading">
+        <h2 id="download-heading" class="section-heading">Try the build</h2>
+
+        <div class="boarding-pass">
+          <div class="bp-main">
+            <p class="bp-eyebrow">Boarding Pass</p>
+            <p class="bp-app-name">Destination Discovery</p>
+            <p class="bp-route">DEV BUILD <span aria-hidden="true">✈</span> YOUR DEVICE</p>
+            <dl class="bp-meta">
+              <div>
+                <dt>Min OS</dt>
+                <dd>Android API 26+</dd>
+              </div>
+              <div>
+                <dt>Build type</dt>
+                <dd>Debug</dd>
+              </div>
+              <div>
+                <dt>Version</dt>
+                <dd>2.0</dd>
+              </div>
+            </dl>
+            <span class="bp-stamp">DEBUG BUILD</span>
+          </div>
+          <div class="bp-stub">
+            <a class="bp-download-link" href="*.apk">
+              
+              <span class="bp-download-label">Download</span>
+              <span class="bp-download-sub">.apk</span>
+            </a>
+          </div>
+        </div>
+        <p class="download-note">
+          Sideloading required - Android will warn about installing from outside the Play Store. That's expected for a debug build.
+        </p>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Capstone project, built in Android Studio - 2026</p>
+    </footer>
+
   </body>
 </html>

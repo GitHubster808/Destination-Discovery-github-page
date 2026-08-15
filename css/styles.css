@@ -1,0 +1,568 @@
+/* ============================================================
+   Destination Discovery App — Debug APK landing page
+   Design concept: a travel boarding-pass / itinerary board,
+   grounded in the app's own screens (Material-inspired accents).
+   ============================================================ */
+
+:root {
+  --color-bg: #FAF7F0;
+  --color-ink: #1A1A1A;
+  --color-ink-soft: #4A4A42;
+  --color-primary: #0B3D2E;
+  --color-primary-light: #2D6A4F;
+  --color-accent: #F2C94C;
+  --color-surface: #EFE9DA;
+  --color-surface-line: #D9D2BE;
+  --color-stamp: #B23A2E;
+
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --max-width: 880px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-primary-light);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-primary-light);
+  outline-offset: 3px;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+.section-sub {
+  color: var(--color-ink-soft);
+  margin: 0 0 32px;
+  font-size: 0.95rem;
+}
+
+/* ---------------- Header / ticket ---------------- */
+
+.ticket-header {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  padding: 56px 24px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.route-line {
+  max-width: 320px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.route-line::before {
+  content: "";
+  flex: 1;
+  height: 0;
+  border-top: 2px dashed rgba(250, 247, 240, 0.45);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.plane-icon {
+  width: 22px;
+  height: 22px;
+  fill: var(--color-accent);
+  flex-shrink: 0;
+  transform: rotate(90deg);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 12px;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.3rem + 3vw, 3.25rem);
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin: 8px 0 20px;
+}
+
+.lede {
+  max-width: 480px;
+  margin: 0 auto;
+  color: rgba(250, 247, 240, 0.85);
+  font-size: 1rem;
+}
+
+/* ---------------- Itinerary / features ---------------- */
+
+.itinerary {
+  padding: 64px 0 16px;
+}
+
+.itinerary-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-surface-line);
+}
+
+.itinerary-row {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: start;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--color-surface-line);
+}
+
+.itinerary-glyph {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-primary-light);
+  font-weight: 600;
+  padding-top: 2px;
+}
+
+.itinerary-copy h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--color-ink);
+}
+
+.itinerary-copy p {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+}
+
+.itinerary-time {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--color-primary-light);
+  white-space: nowrap;
+  padding-top: 3px;
+}
+
+/* ---------------- Gallery / phone mockups ---------------- */
+
+.gallery {
+  padding: 56px 0 16px;
+}
+
+.phone-strip {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 8px 4px 24px;
+  scroll-snap-type: x proximity;
+}
+
+.phone {
+  margin: 0;
+  flex: 0 0 auto;
+  width: 200px;
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.phone-frame {
+  border-radius: 16px;
+  box-shadow: 0 12px 28px -12px rgba(11, 61, 46, 0.35);
+}
+
+.phone-notch {
+  width: 44px;
+  height: 6px;
+  background: #2a2a2a;
+  border-radius: 4px;
+  margin: 0 auto 6px;
+}
+
+.phone-screen {
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-line);
+  border-radius: 16px;
+  height: 300px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.phone-screen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.screen-welcome {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.screen-welcome-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.screen-welcome-sub {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  color: var(--color-accent);
+}
+
+.screen-btn {
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+
+.screen-appbar {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--color-ink-soft);
+  margin: 0 0 10px;
+}
+
+.screen-field-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin: 10px 0 2px;
+}
+
+.screen-field-value {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-ink);
+}
+
+.screen-date {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  background: var(--color-surface);
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin: 6px 6px 0 0;
+}
+
+.screen-excursion {
+  font-size: 0.72rem;
+  font-weight: 500;
+  background: var(--color-surface);
+  padding: 6px 8px;
+  border-radius: 6px;
+  margin-top: 4px;
+}
+
+.screen-calendar {
+  background: var(--color-surface);
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 6px;
+}
+
+.cal-month {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  margin: 0 0 8px;
+  color: var(--color-ink-soft);
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.cal-grid span {
+  display: block;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.cal-active {
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.6rem;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+}
+
+.phone figcaption {
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-ink-soft);
+  letter-spacing: 0.04em;
+}
+
+/* ---------------- Download / boarding pass ---------------- */
+
+.download {
+  padding: 56px 0 72px;
+}
+
+.boarding-pass {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 40px -20px rgba(11, 61, 46, 0.4);
+  overflow: hidden;
+}
+
+.bp-main {
+  padding: 32px;
+  position: relative;
+}
+
+.bp-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin: 0 0 6px;
+}
+
+.bp-app-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: var(--color-primary);
+  margin: 0 0 8px;
+  max-width: 260px;
+}
+
+.bp-route {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+  margin: 0 0 24px;
+}
+
+.bp-meta {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 24px;
+  margin: 0;
+}
+
+.bp-meta dt {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin: 0 0 2px;
+}
+
+.bp-meta dd {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.bp-stamp {
+  position: absolute;
+  top: 28px;
+  right: 32px;
+  border: 2px solid var(--color-stamp);
+  color: var(--color-stamp);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transform: rotate(3deg);
+  opacity: 0.8;
+}
+
+/* perforation: dashed edge with circular notches cut top & bottom of the stub */
+.bp-stub {
+  background: var(--color-primary);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px dashed rgba(250, 247, 240, 0.5);
+}
+
+.bp-stub::before,
+.bp-stub::after {
+  content: "";
+  position: absolute;
+  left: -12px;
+  width: 24px;
+  height: 24px;
+  background: var(--color-bg);
+  border-radius: 50%;
+}
+
+.bp-stub::before { top: -12px; }
+.bp-stub::after { bottom: -12px; }
+
+.bp-download-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-bg);
+  text-decoration: none;
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.bp-download-link:hover,
+.bp-download-link:focus-visible {
+  background: rgba(250, 247, 240, 0.1);
+  transform: translateY(-2px);
+}
+
+.bp-download-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.bp-download-sub {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-accent);
+}
+
+.download-note {
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  margin: 16px 4px 0;
+}
+
+/* ---------------- Footer ---------------- */
+
+.site-footer {
+  text-align: center;
+  padding: 32px 24px 48px;
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+  font-family: var(--font-mono);
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 640px) {
+  .itinerary-row {
+    grid-template-columns: 32px 1fr;
+  }
+  .itinerary-time {
+    grid-column: 2;
+    padding-top: 0;
+  }
+  .boarding-pass {
+    grid-template-columns: 1fr;
+  }
+  .bp-stub {
+    border-left: none;
+    border-top: 2px dashed rgba(250, 247, 240, 0.5);
+  }
+  .bp-stub::before,
+  .bp-stub::after {
+    left: 50%;
+    top: -12px;
+    transform: translateX(-50%);
+  }
+  .bp-stub::after {
+    top: auto;
+    bottom: -12px;
+  }
+  .bp-meta {
+    grid-template-columns: repeat(2, auto);
+    row-gap: 16px;
+  }
+}
